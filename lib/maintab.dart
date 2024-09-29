@@ -6,6 +6,7 @@ import 'package:facbook_clone/pages/market_page.dart';
 import 'package:facbook_clone/pages/message_page.dart';
 import 'package:facbook_clone/pages/notification_page.dart';
 import 'package:facbook_clone/pages/video_page.dart';
+import 'package:facbook_clone/widget/home/mydrawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -97,6 +98,9 @@ class _MaintabState extends State<Maintab> with SingleTickerProviderStateMixin {
             indicatorColor: Colors.black,
             tabs: toptap,
           ),
+        ),
+        endDrawer: Container(
+          child: MyDrawer(),
         ),
         body: TabBarView(
           controller: _tabController,
