@@ -6,6 +6,8 @@ class Postbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         IconButton(
             iconSize: 50,
@@ -20,9 +22,18 @@ class Postbar extends StatelessWidget {
               style: TextStyle(fontSize: 18, color: Colors.grey[600]),
             )),
         Container(
+          height: 60,
           child: VerticalDivider(
             color: Colors.black26,
           ),
+        ),
+        Column(
+          children: [
+            IconButton(
+                onPressed: () => print("photo clicked"),
+                icon: Icon(Icons.photo_album_outlined)),
+            Text("Photo")
+          ],
         )
       ],
     );
