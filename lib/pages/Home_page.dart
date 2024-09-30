@@ -2,6 +2,7 @@
 // ignore: file_names
 // ignore_for_file: file_names
 
+import 'package:facbook_clone/widget/home/postbar.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -14,9 +15,10 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return const Text(
-      'homepage',
-      style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+    return Container(
+      child: ListView(
+        children: [Postbar()],
+      ),
     );
   }
 }

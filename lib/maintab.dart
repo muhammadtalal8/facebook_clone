@@ -9,6 +9,7 @@ import 'package:facbook_clone/pages/video_page.dart';
 import 'package:facbook_clone/widget/home/mydrawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:badges/badges.dart' as badges;
 
 class Maintab extends StatefulWidget {
   const Maintab({super.key});
@@ -23,7 +24,14 @@ class _MaintabState extends State<Maintab> with SingleTickerProviderStateMixin {
     const Tab(icon: Icon(Icons.home_outlined)),
     const Tab(icon: Icon(Icons.people_outline)),
     const Tab(icon: Icon(Icons.message_outlined)),
-    const Tab(icon: Icon(Icons.notification_add_outlined)),
+    Tab(
+        icon: badges.Badge(
+            position: badges.BadgePosition.topEnd(top: -20, end: -5),
+            badgeContent: const Text(
+              "3",
+              style: TextStyle(fontSize: 18, color: Colors.white),
+            ),
+            child: const Icon(Icons.notification_add_outlined))),
     const Tab(icon: Icon(Icons.video_library_outlined)),
     const Tab(icon: Icon(Icons.shopping_bag_outlined)),
   ];
@@ -100,7 +108,8 @@ class _MaintabState extends State<Maintab> with SingleTickerProviderStateMixin {
           ),
         ),
         endDrawer: Container(
-          child: MyDrawer(),
+          width: MediaQuery.of(context).size.width * 0.9,
+          child: const MyDrawer(),
         ),
         body: TabBarView(
           controller: _tabController,
