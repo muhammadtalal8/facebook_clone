@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 
 class Postbar extends StatelessWidget {
@@ -21,7 +23,7 @@ class Postbar extends StatelessWidget {
               "whats on your mind?",
               style: TextStyle(fontSize: 18, color: Colors.grey[600]),
             )),
-        Container(
+        const SizedBox(
           height: 60,
           child: VerticalDivider(
             color: Colors.black26,
@@ -31,8 +33,8 @@ class Postbar extends StatelessWidget {
           children: [
             IconButton(
                 onPressed: () => print("photo clicked"),
-                icon: Icon(Icons.photo_album_outlined)),
-            Text("Photo")
+                icon: const Icon(Icons.photo_album_outlined)),
+            const Text("Photo")
           ],
         )
       ],
