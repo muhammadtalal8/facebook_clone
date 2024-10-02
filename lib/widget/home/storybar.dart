@@ -58,6 +58,22 @@ class Storybar extends StatelessWidget {
                           color: Colors.blueAccent,
                         )),
                   ])),
+              Container(
+                height: 250,
+                width: 150,
+                child: Stack(
+                  fit: StackFit.expand,
+                  children: [
+                    GestureDetector(
+                      onTap: () => print('Friend story clicked'),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Image(image: AssetImage('images/man3.jpeg')),
+                      ),
+                    )
+                  ],
+                ),
+              )
             ],
           ),
         ));
