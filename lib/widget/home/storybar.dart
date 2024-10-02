@@ -1,3 +1,4 @@
+import 'package:facbook_clone/models/storymodel.dart';
 import 'package:flutter/material.dart';
 
 class Storybar extends StatelessWidget {
@@ -6,10 +7,11 @@ class Storybar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: EdgeInsets.all(10.0),
+        margin: const EdgeInsets.all(10.0),
         child: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Wrap(
+            spacing: 10.0,
             children: [
               Container(
                   height: 255,
@@ -25,8 +27,8 @@ class Storybar extends StatelessWidget {
                           Container(
                               height: 170,
                               width: 150,
-                              margin: EdgeInsets.only(bottom: 30.0),
-                              child: ClipRRect(
+                              margin: const EdgeInsets.only(bottom: 30.0),
+                              child: const ClipRRect(
                                 borderRadius: BorderRadius.only(
                                   topLeft: Radius.circular(20),
                                   topRight: Radius.circular(20),
@@ -38,7 +40,7 @@ class Storybar extends StatelessWidget {
                               )),
                           TextButton(
                               onPressed: () => {},
-                              child: Text(
+                              child: const Text(
                                 "Add to Story",
                                 style: TextStyle(
                                     fontSize: 20.0,
@@ -53,27 +55,43 @@ class Storybar extends StatelessWidget {
                         left: 45.0,
                         child: IconButton(
                           onPressed: () => {},
-                          icon: Icon(Icons.add_circle_rounded),
+                          icon: const Icon(Icons.add_circle_rounded),
                           iconSize: 45.0,
                           color: Colors.blueAccent,
                         )),
                   ])),
-              Container(
-                height: 250,
-                width: 150,
-                child: Stack(
-                  fit: StackFit.expand,
-                  children: [
-                    GestureDetector(
-                      onTap: () => print('Friend story clicked'),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child: Image(image: AssetImage('images/man3.jpeg')),
+              //for loop will be here
+              for (var i = 0; i < storyData.length; i) ...[
+                Container(
+                  height: 250,
+                  width: 150,
+                  child: Stack(
+                    fit: StackFit.expand,
+                    children: [
+                      GestureDetector(
+                        onTap: storyData[i].onTap,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: Image(
+                            image: AssetImage(storyData[i].image),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
                       ),
-                    )
-                  ],
+                      Positioned(
+                          bottom: 15.0,
+                          left: 10.0,
+                          child: Text(
+                            storyData[i].username,
+                            style: const TextStyle(
+                                color: Colors.black,
+                                fontSize: 20.0,
+                                fontWeight: FontWeight.bold),
+                          ))
+                    ],
+                  ),
                 ),
-              )
+              ]
             ],
           ),
         ));
