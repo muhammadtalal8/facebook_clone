@@ -14,6 +14,6 @@ class MyApp extends StatelessWidget {
         title: 'Facebook',
         theme: ThemeData(primaryColor: Colors.white),
         debugShowCheckedModeBanner: false,
-        home: const Maintab());
+        home: Maintab());
   }
 }
