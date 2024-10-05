@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:facbook_clone/models/storymodel.dart';
 import 'package:flutter/material.dart';
 
@@ -62,6 +64,7 @@ class Storybar extends StatelessWidget {
                   ])),
               //for loop will be here
               for (var i = 0; i < storyData.length; i) ...[
+                // ignore: sized_box_for_whitespace
                 Container(
                   height: 250,
                   width: 150,

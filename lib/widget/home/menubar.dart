@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 
 class Menubar extends StatelessWidget {
@@ -13,14 +15,14 @@ class Menubar extends StatelessWidget {
             onPressed: () => print("Add Post Clicked"),
             child: Row(
               children: [
-                Icon(Icons.post_add_outlined),
+                const Icon(Icons.post_add_outlined),
                 Text(
                   "Text",
                   style: TextStyle(fontSize: 18, color: Colors.grey[600]),
                 )
               ],
             )),
-        Container(
+        const SizedBox(
           height: 40,
           child: VerticalDivider(
             color: Colors.black26,
@@ -30,7 +32,7 @@ class Menubar extends StatelessWidget {
             onPressed: () => print("Video live Clicked"),
             child: Row(
               children: [
-                Icon(
+                const Icon(
                   Icons.video_call,
                   color: Colors.redAccent,
                 ),
@@ -40,7 +42,7 @@ class Menubar extends StatelessWidget {
                 )
               ],
             )),
-        Container(
+        const SizedBox(
           height: 40,
           child: VerticalDivider(
             color: Colors.black26,
@@ -49,7 +51,7 @@ class Menubar extends StatelessWidget {
         TextButton(
             onPressed: () => print("Location Clicked"),
             child: Row(children: [
-              Icon(Icons.location_on, color: Colors.red),
+              const Icon(Icons.location_on, color: Colors.red),
               Text(
                 "Location",
                 style: TextStyle(fontSize: 18, color: Colors.grey[600]),
