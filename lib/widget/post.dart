@@ -17,7 +17,7 @@ class Post extends StatelessWidget {
                     radius: 80,
                     backgroundImage: AssetImage('images/man7.jpeg'),
                   )),
-              Expanded(
+              const Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -44,23 +44,44 @@ class Post extends StatelessWidget {
               IconButton(
                 iconSize: 30,
                 onPressed: () => {},
-                icon: Icon(Icons.more_horiz_outlined),
+                icon: const Icon(Icons.more_horiz_outlined),
               )
             ],
           ),
           Container(
-            child: Column(
+            margin: const EdgeInsets.symmetric(horizontal: 10.0),
+            child: const Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'This is title',
-                  style: TextStyle(
-                    fontSize: 18.0,
-                    color: Colors.black,
+                Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                    'This is title',
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      color: Colors.black,
+                    ),
                   ),
                 ),
                 Image(image: AssetImage('images/man6.jpeg'))
               ],
             ),
+          ),
+          Row(
+            children: [
+              Row(
+                children: [
+                  IconButton(
+                    onPressed: () => {},
+                    icon: Icon(Icons.thumb_up_alt_outlined),
+                  ),
+                  Text(
+                    "12",
+                    style: TextStyle(fontSize: 18.0),
+                  )
+                ],
+              )
+            ],
           )
         ],
       ),
