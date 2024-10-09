@@ -105,7 +105,7 @@ class _FriendPageState extends State<FriendPage> {
                                       textStyle: const TextStyle(
                                           fontSize: 16,
                                           fontWeight: FontWeight.bold)),
-                                  child: const Text('Remove'))
+                                  child: Text('Remove'))
                             ],
                           ),
                           onTap: () {
