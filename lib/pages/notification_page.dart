@@ -1,3 +1,4 @@
+import 'package:facbook_clone/models/notification_model.dart';
 import 'package:flutter/material.dart';
 
 class NotificationPage extends StatefulWidget {
@@ -10,9 +11,78 @@ class NotificationPage extends StatefulWidget {
 class _NotificationPageState extends State<NotificationPage> {
   @override
   Widget build(BuildContext context) {
-    return const Text(
-      'notification',
-      style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+    return Column(
+      children: [
+        Container(
+          margin: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text(
+                "Notification",
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Row(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle, color: Colors.grey[300]),
+                    child: IconButton(
+                      icon: const Icon(Icons.check_circle),
+                      splashColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      tooltip: ,
+                      onPressed: () {
+                        print('Create New Message Clicked');
+                        
+                      },
+                      
+                    ),
+                    
+                    
+
+                    )
+                ]    
+                  ),
+            
+                ],
+              )
+        ),
+         
+         Divider(
+          thickness: 1,
+          color: Colors.black38,
+        ),
+        Expanded(
+            child: ListView.builder(
+          itemCount: notificationData.length,
+          itemBuilder: (context, i) => Column(children: [
+            ListTile(
+              leading: CircleAvatar(
+                backgroundColor: Colors.blueGrey,
+                backgroundImage: AssetImage(notificationData[i].avator),
+              ),
+              title: Text( 
+                notificationData[i].name,
+                style:
+                    const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+              trailing: IconButton(
+                iconSize: 20,
+                color: Colors.green,
+                onPressed: () {},
+                icon: Icon(Icons.more_vert_outlined),
+              ),
+              onTap: () {
+                print("User Tapped from message");
+              },
+            ),
+          ]),
+        ))
+      ],
     );
   }
 }
