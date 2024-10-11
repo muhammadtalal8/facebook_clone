@@ -82,9 +82,22 @@ class _VideoPageState extends State<VideoPage> {
                                 color: Colors.blueAccent),
                           ))
                     ],
+                  ),
+                  Wrap(
+                    spacing: 10.0,
+                    children: [
+                      Text(
+                        videoData[i].time,
+                        style: TextStyle(fontSize: 18.0),
+                      ),
+                      Icon(Icons.public)
+                    ],
                   )
                 ],
-              ))
+              )),
+              IconButton(
+                  onPressed: videoData[i].moreOnPressed,
+                  icon: Icon(Icons.more_horiz_outlined))
             ]),
           ]),
         ))
