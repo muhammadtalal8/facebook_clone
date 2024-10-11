@@ -2,6 +2,7 @@
 
 import 'package:facbook_clone/models/video_model.dart';
 import 'package:flutter/material.dart';
+import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 class VideoPage extends StatefulWidget {
   const VideoPage({super.key});
@@ -96,9 +97,31 @@ class _VideoPageState extends State<VideoPage> {
                 ],
               )),
               IconButton(
+                  iconSize: 30,
                   onPressed: videoData[i].moreOnPressed,
                   icon: Icon(Icons.more_horiz_outlined))
             ]),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  YoutubePlayerControllerProvider(
+                  
+                    controller: YoutubePlayerController(
+                    initialVideoId: videoData[i].videoPostLink ?? "",
+                    params: YoutubePlayerParams(
+                      autoPlay: false,
+                      mute: false,
+                      showControls: true,
+                      showFullscreenButton: false,
+                      
+                    ),
+                    
+                  ), child: ),
+                ],
+              ),
+            )
           ]),
         ))
       ],
