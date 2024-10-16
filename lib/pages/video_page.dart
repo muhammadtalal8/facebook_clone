@@ -13,6 +13,8 @@ class VideoPage extends StatefulWidget {
 
 class _VideoPageState extends State<VideoPage> {
   bool isSwitched = false;
+
+  get _controller => null;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -68,7 +70,7 @@ class _VideoPageState extends State<VideoPage> {
                     children: [
                       Text(
                         videoData[i].name,
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontSize: 20.0,
                             color: Colors.black,
                             fontWeight: FontWeight.bold),
@@ -89,9 +91,9 @@ class _VideoPageState extends State<VideoPage> {
                     children: [
                       Text(
                         videoData[i].time,
-                        style: TextStyle(fontSize: 18.0),
+                        style: const TextStyle(fontSize: 18.0),
                       ),
-                      Icon(Icons.public)
+                      const Icon(Icons.public)
                     ],
                   )
                 ],
@@ -99,28 +101,75 @@ class _VideoPageState extends State<VideoPage> {
               IconButton(
                   iconSize: 30,
                   onPressed: videoData[i].moreOnPressed,
-                  icon: Icon(Icons.more_horiz_outlined))
+                  icon: const Icon(Icons.more_horiz_outlined))
             ]),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+              margin:
+                  const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   YoutubePlayerControllerProvider(
-                  
                     controller: YoutubePlayerController(
-                    initialVideoId: videoData[i].videoPostLink ?? "",
-                    params: YoutubePlayerParams(
-                      autoPlay: false,
-                      mute: false,
-                      showControls: true,
-                      showFullscreenButton: false,
-                      
+                      params: const YoutubePlayerParams(
+                        mute: false,
+                        showControls: true,
+                        showFullscreenButton: false,
+                      ),
                     ),
-                    
-                  ), child: ),
+                    child: YoutubePlayer(
+                      controller: _controller,
+                      aspectRatio: 16 / 9,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      videoData[i].videoPostTitle,
+                      style:
+                          const TextStyle(fontSize: 18.0, color: Colors.black),
+                    ),
+                  )
                 ],
               ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Row(
+                  children: [
+                    IconButton(
+                        onPressed: videoData[i].likeOnpressed,
+                        icon: const Icon(Icons.thumb_up_alt_outlined)),
+                    const Text(
+                      "12",
+                      style: TextStyle(fontSize: 18.0),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    IconButton(
+                        onPressed: videoData[i].commentOnPressed,
+                        icon: const Icon(Icons.message_outlined)),
+                    const Text(
+                      "10",
+                      style: TextStyle(fontSize: 18.0),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    IconButton(
+                        onPressed: videoData[i].shareOnPressed,
+                        icon: const Icon(Icons.share_outlined)),
+                    const Text(
+                      "15",
+                      style: TextStyle(fontSize: 18.0),
+                    ),
+                  ],
+                ),
+              ],
             )
           ]),
         ))

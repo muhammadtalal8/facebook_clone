@@ -1,5 +1,3 @@
-// ignore_for_file: avoid_print
-
 import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
@@ -10,7 +8,7 @@ class VideoModel {
   late final String time;
   late final VoidCallback moreOnPressed;
   late final String videoPostTitle;
-  late final String videoPostLink;
+  late final String? videoPostLink;
   late final VoidCallback likeOnpressed;
   late final VoidCallback commentOnPressed;
   late final VoidCallback shareOnPressed;
@@ -26,8 +24,6 @@ class VideoModel {
       required this.likeOnpressed,
       required this.commentOnPressed,
       required this.shareOnPressed});
-
-  get videoPostLink => null;
 }
 
 List<VideoModel> videoData = [
@@ -38,7 +34,8 @@ List<VideoModel> videoData = [
     time: "JUst Now",
     moreOnPressed: () => print('More clicked'),
     videoPostTitle: "This is my new profile Video",
-    videoPostLink: YoutubePlayer.convertUrlToId(""),
+    videoPostLink: YoutubePlayer.convertUrlToId(
+        "https://www.youtube.com/watch?v=bnZUyHNaxfU"),
     likeOnpressed: () => {print('like clicked')},
     commentOnPressed: () => print("Comment clicked"),
     shareOnPressed: () => print('share clicked'),
@@ -50,7 +47,8 @@ List<VideoModel> videoData = [
     time: "JUst Now",
     moreOnPressed: () => print('More clicked'),
     videoPostTitle: "This is my new profile Video",
-    videoPostLink: YoutubePlayer.convertUrlToId(""),
+    videoPostLink: YoutubePlayer.convertUrlToId(
+        "https://www.youtube.com/watch?v=IEyAWqYFqW0&t=610s"),
     likeOnpressed: () => {print('like clicked')},
     commentOnPressed: () => print("Comment clicked"),
     shareOnPressed: () => print('share clicked'),
@@ -62,7 +60,8 @@ List<VideoModel> videoData = [
     time: "JUst Now",
     moreOnPressed: () => print('More clicked'),
     videoPostTitle: "This is my new profile Video",
-    videoPostLink: "images/man2.avif",
+    videoPostLink: YoutubePlayer.convertUrlToId(
+        "https://www.youtube.com/watch?v=IEyAWqYFqW0&t=610s"),
     likeOnpressed: () => {print('like clicked')},
     commentOnPressed: () => print("Comment clicked"),
     shareOnPressed: () => print('share clicked'),
