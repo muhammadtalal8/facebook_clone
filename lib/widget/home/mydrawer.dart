@@ -5,8 +5,22 @@ class MyDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Drawer(
-      child: Text('Menu'),
-    );
+    return Drawer(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Container(
+            height: 100,
+            child: DrawerHeader(child: Row(
+              children: [
+                
+              ],
+            )),
+          )
+        ],
+      ),
+    ) 
+    
   }
 }
