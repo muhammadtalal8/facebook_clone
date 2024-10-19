@@ -6,6 +6,7 @@ class Post extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: avoid_unnecessary_containers
     return Container(
       child: Column(children: [
         for (var i = 0; i < postData.length; i++) ...[

@@ -12,13 +12,13 @@ class MessageModel {
     required this.status,
   });
 
-  static Icon statusOnline = Icon(
+  static Icon statusOnline = const Icon(
     Icons.phone_android_outlined,
     size: 18,
     color: Colors.green,
   );
 
-  static Icon statusOffline = Icon(
+  static Icon statusOffline = const Icon(
     Icons.phone_android_outlined,
     size: 18,
     color: Colors.black38,

@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:facbook_clone/models/message_model.dart';
 import 'package:flutter/material.dart';
 
@@ -36,21 +38,21 @@ class _MessagePageState extends State<MessagePage> {
                       highlightColor: Colors.transparent,
                       color: Colors.green,
                       onPressed: () {
-                        print('Person CLicked');
+                        print('Person CLicked this');
                       },
                     ),
                   ),
                   Container(
                     margin: const EdgeInsets.only(left: 10.0),
                     decoration: BoxDecoration(
-                        shape: BoxShape.circle, color: Colors.grey[300]),
+                        shape: BoxShape.circle, color: Colors.grey[200]),
                     child: IconButton(
                       icon: const Icon(Icons.settings),
                       splashColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       color: Colors.redAccent,
                       onPressed: () {
-                        print('Person CLicked');
+                        print('Person Clicked this');
                       },
                     ),
                   ),

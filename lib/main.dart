@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Facebook',
+        title: 'Facebooks',
         theme: ThemeData(primaryColor: Colors.white),
         debugShowCheckedModeBanner: false,
         home: const Maintab());

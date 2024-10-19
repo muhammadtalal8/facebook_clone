@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:facbook_clone/models/notification_model.dart';
 import 'package:flutter/material.dart';
 
@@ -42,7 +44,7 @@ class _NotificationPageState extends State<NotificationPage> {
                 ]),
               ],
             )),
-        Divider(
+        const Divider(
           thickness: 1,
           color: Colors.black38,
         ),
@@ -56,6 +58,7 @@ class _NotificationPageState extends State<NotificationPage> {
                 backgroundImage: AssetImage(notificationData[i].avator),
               ),
               title: Text(
+                // ignore: prefer_interpolation_to_compose_strings
                 notificationData[i].name +
                     ' ' +
                     notificationData[i].description,
@@ -66,7 +69,7 @@ class _NotificationPageState extends State<NotificationPage> {
                 iconSize: 20,
                 color: Colors.green,
                 onPressed: () {},
-                icon: Icon(Icons.more_vert_outlined),
+                icon: const Icon(Icons.more_vert_outlined),
               ),
               onTap: () {
                 print("User Tapped from message");

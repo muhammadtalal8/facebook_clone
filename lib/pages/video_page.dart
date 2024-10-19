@@ -142,7 +142,7 @@ class _VideoPageState extends State<VideoPage> {
                         onPressed: videoData[i].likeOnpressed,
                         icon: const Icon(Icons.thumb_up_alt_outlined)),
                     const Text(
-                      "12",
+                      "20",
                       style: TextStyle(fontSize: 18.0),
                     ),
                   ],
@@ -153,7 +153,7 @@ class _VideoPageState extends State<VideoPage> {
                         onPressed: videoData[i].commentOnPressed,
                         icon: const Icon(Icons.message_outlined)),
                     const Text(
-                      "10",
+                      "15",
                       style: TextStyle(fontSize: 18.0),
                     ),
                   ],
@@ -164,7 +164,7 @@ class _VideoPageState extends State<VideoPage> {
                         onPressed: videoData[i].shareOnPressed,
                         icon: const Icon(Icons.share_outlined)),
                     const Text(
-                      "15",
+                      "18",
                       style: TextStyle(fontSize: 18.0),
                     ),
                   ],
