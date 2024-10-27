@@ -108,8 +108,8 @@ class _MaintabState extends State<Maintab> with SingleTickerProviderStateMixin {
           ),
         ),
         endDrawer: SizedBox(
-          width: MediaQuery.of(context).size.width * 0.9,
-          child: const MyDrawer(),
+          width: MediaQuery.of(context).size.width * 1.0,
+          child: MyDrawer(),
         ),
         body: TabBarView(
           controller: _tabController,

@@ -1,10 +1,9 @@
-// ignore: duplicate_ignore
-// ignore: file_names
-// ignore_for_file: file_names
+
 
 import 'package:facbook_clone/widget/home/menubar.dart';
 import 'package:facbook_clone/widget/home/postbar.dart';
 import 'package:facbook_clone/widget/home/storybar.dart';
+import 'package:facbook_clone/widget/post.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -36,6 +35,7 @@ class _HomePageState extends State<HomePage> {
             thickness: 1,
             color: Colors.black12,
           ),
+          Post(),
         ],
       ),
     );
