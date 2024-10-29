@@ -1,6 +1,4 @@
-// ignore: duplicate_ignore
-// ignore: file_names
-// ignore_for_file: file_names
+
 
 import 'package:facbook_clone/widget/home/menubar.dart';
 import 'package:facbook_clone/widget/home/postbar.dart';
