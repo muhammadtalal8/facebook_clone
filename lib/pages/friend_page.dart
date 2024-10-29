@@ -1,4 +1,3 @@
-// ignore_for_file: avoid_print
 
 import 'package:facbook_clone/models/friends_model.dart';
 import 'package:flutter/material.dart';
