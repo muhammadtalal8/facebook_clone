@@ -11,7 +11,7 @@ class FriendsModel {
 }
 
 List<FriendsModel> friendsData = [
-  FriendsModel(name: 'Khan', avator: "images/man2.avif"),
+  FriendsModel(name: 'Khanjee', avator: "images/man2.avif"),
   FriendsModel(name: 'bilal', avator: "images/man3.jpeg"),
   FriendsModel(name: 'Nabeel', avator: "images/man4.jpeg"),
   FriendsModel(name: 'Talal', avator: "images/man5.jpeg"),

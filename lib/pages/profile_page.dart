@@ -1,5 +1,8 @@
 // ignore_for_file: sized_box_for_whitespace, avoid_unnecessary_containers, sort_child_properties_last
 
+import 'package:facbook_clone/widget/home/menubar.dart';
+import 'package:facbook_clone/widget/home/postbar.dart';
+import 'package:facbook_clone/widget/post.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -170,10 +173,13 @@ class ProfilePage extends StatelessWidget {
                 ],
               ),
             ),
-            Divider(
+            const Divider(
               thickness: 1,
               color: Colors.black38,
-            )
+            ),
+             const Postbar(),
+ const Menubar(),
+ const Post(),
           ],
         ),
       ),

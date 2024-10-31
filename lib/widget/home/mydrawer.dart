@@ -1,9 +1,10 @@
-// ignore_for_file: sort_child_properties_last
+// ignore_for_file: sort_child_properties_last, avoid_print, duplicate_ignore
 
 import 'package:facbook_clone/models/video_model.dart';
 import 'package:facbook_clone/pages/friend_page.dart';
 import 'package:facbook_clone/pages/market_page.dart';
 import 'package:facbook_clone/pages/message_page.dart';
+import 'package:facbook_clone/pages/profile_page.dart';
 import 'package:facbook_clone/pages/video_page.dart';
 import 'package:flutter/material.dart';
 
@@ -30,6 +31,7 @@ class MyDrawer extends StatelessWidget {
                   icon: const Icon(Icons.arrow_back_outlined),
                   splashColor: Colors.transparent,
                   highlightColor: Colors.transparent,
+                  
                 ),
                 const Text(
                   "MENU",
@@ -64,7 +66,17 @@ class MyDrawer extends StatelessWidget {
                     style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                   ),
                   subtitle: const Text("View Your Profile"),
-                  onTap: () => {},
+                  onTap: () => {
+                    
+                    // ignore: avoid_unnecessary_containers
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>  const ProfilePage(),                                                            
+                                ))
+   
+
+                  },
                 ),
                 const Divider(
                   thickness: 1,
@@ -147,7 +159,7 @@ class MyDrawer extends StatelessWidget {
                                   child: Container(
                                     margin: const EdgeInsets.symmetric(
                                         vertical: 20.0),
-                                    child: const FriendPage(),
+                                    child: FriendPage(),
                                   ),
                                 )))
                   },

@@ -113,13 +113,13 @@ class _MaintabState extends State<Maintab> with SingleTickerProviderStateMixin {
         ),
         body: TabBarView(
           controller: _tabController,
-          children: const [
-            HomePage(),
+          children: [
+            const HomePage(),
             FriendPage(),
-            MessagePage(),
-            NotificationPage(),
-            VideoPage(),
-            MarketPage()
+            const MessagePage(),
+            const NotificationPage(),
+            const VideoPage(),
+            const MarketPage()
           ],
         ),
       ),
