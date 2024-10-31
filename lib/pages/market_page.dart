@@ -1,4 +1,3 @@
-// ignore_for_file: avoid_unnecessary_containers, avoid_print, sort_child_properties_last, prefer_typing_uninitialized_variables
 
 import 'package:facbook_clone/models/marketplace_model.dart';
 import 'package:flutter/material.dart';

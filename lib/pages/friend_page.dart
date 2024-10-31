@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 // ignore_for_file: avoid_print, prefer__ructors_in_immutables
+=======
+>>>>>>> 8c621e39a02681ebbe22844c3cad6b4e7bcc93dc
 
 import 'package:facbook_clone/models/friends_model.dart';
 import 'package:flutter/material.dart';
